@@ -1,14 +1,10 @@
-#include "ft_printf.h"
+#include "includes/ft_printf.h"
+#include "libft/libft.h"
 
 /*
 **  variadic function has key words
 **  va_start va_args va_end va_copy va_list
 */
-
-void    ft_putchar(char c)
-{
-    write(1, &c, 1);
-}
 
 int     ft_printf(const char *fstr, ...)
 {
@@ -33,5 +29,8 @@ int     ft_printf(const char *fstr, ...)
 int     main(void)
 {
     char *p;
+    int i = 15;
+    p = "has been made with lib";
+    printf("%zu:%s", ft_strlen(p), p);
     return (0);
 }
