@@ -6,10 +6,10 @@
 #    By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 14:51:17 by ikhadem           #+#    #+#              #
-#    Updated: 2019/10/27 14:54:49 by ikhadem          ###   ########.fr        #
+#    Updated: 2019/11/01 13:52:54 by ikhadem          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 all :
 	make -C libft/
-	gcc main.c libft/libft.a
+	gcc main.c sources/*.c libft/libft.a

@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/03 15:43:11 by ikhadem           #+#    #+#             */
-/*   Updated: 2019/11/03 16:54:09 by ikhadem          ###   ########.fr       */
+/*   Created: 2019/11/02 13:08:10 by ikhadem           #+#    #+#             */
+/*   Updated: 2019/11/02 17:44:03 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/ft_printf.h"
+#include "../libft/libft.h"
+#include "../includes/ft_printf.h"
 
-int     main(void)
+int     ft_istype(int c)
 {
-	int i;
-	i = 10;
-	char c = 'Z';
-	char *str;
-	str = "ilyass";
-
-	printf("%c %s %ddddddd %h", c, str, i, i);
-	return (0);
+    if (c == 'd' || c == 'i' || c == 'c' || c == 's')
+        return (1);
+    return (0);
 }
+
+

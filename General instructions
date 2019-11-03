@@ -1,0 +1,56 @@
+int       ft_printf(const char *str, ...);
+     return type int
+            value number of chars written or -1 in case of an error
+     params const char str (string to format)
+            ... (params to input based on numoreous condtions)
+
+% [[flag] [width] [.precision] [length]] type
+
+flag       ==>   
+               - => left field adjust
+               0 => zero padding
+               * => gives the number of width as a param
+min width  ==> 
+               number of spaces to add (specified in between the % and the type)
+.precision ==>
+               (.) precies the precision of floating numbers
+length     ==> /* TODO : needs more research */
+               l
+               ll
+               h
+               hh
+type       ==>
+               format specifiers (determines the format o fthe value to expect)
+                    c     => chars
+                    s     => string
+                    p     => pointers (hex value)
+                    d / i => decimal / integer
+                    u     => unsigned decimal
+                    x / X => hexadecimal
+                    %     => outputs % (exact form %%)
+
+list:value next->value next->value next->NULL
+
+values Parsed if and only if it has an % --> or parse char by char and create a node 
+after n chars if % is shown push that to ur linked list and create another node wich will hold a parsed string
+based on the formating specified
+
+based on the previous constatation we need to get behavioral options to give precedental 
+bihaviors for our options
+
+after all the treatment is done print the node returned and free it
+return a counter of the number of chars printed
+
+function precedence ====
+               parse_string()
+               check_flags()
+               check_width()
+               check_precision()
+               check_length() // bonus part
+               check_type()
+
+
+max int : 2147483647 min int : -2147483648
+
+
+max float : 1.2E+38 min float : -1.2E-38
