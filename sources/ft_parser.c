@@ -6,14 +6,14 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/02 13:08:10 by ikhadem           #+#    #+#             */
-/*   Updated: 2019/11/04 14:09:05 by ikhadem          ###   ########.fr       */
+/*   Updated: 2019/11/05 19:28:27 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../sources/libft/libft.h"
 #include "../includes/ft_printf.h"
 
-int     ft_istype(char c)
+static int     ft_istype(char c)
 {
     char *str;
     str = "cspdiuxX";
@@ -25,11 +25,23 @@ int     ft_istype(char c)
 
 void    ft_parse_str(va_list args, const char *str)
 {
+    char    *s;
+    int     i;
+
+    s = (char *)malloc(10);
+    i = 0;
     while (*str)
     {
-        if (*str == '%')
+        if (*str == '%' && *(str + 1) != '%')
         {
+            while (!ft_istype(*++str))
+                s[i++] = *str;
+            s[i++] = *str;
+            s[i] = '\0';
+            ft_hand_arg(args, s);
         }
+        else if (*str == '%' && *(str + 1) == '%')
+            ft_putchar(*++str);
         else
             ft_putchar(*str);
         str++;

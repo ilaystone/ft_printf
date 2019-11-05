@@ -1,20 +1,23 @@
-
 /* types */
 c : done
 s : done
 p : done
 d : done
 i : done
-u : done
+u :
 x : done
 X : done
 
-/* tags */
+/* min field Width */
+(flat number) :
+* :
+
+/* flags */
 - :
 0 :
+
+/* precision */
 . :
-* :
-Width : 
 
 /* bonus */
 n :

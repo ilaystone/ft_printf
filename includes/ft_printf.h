@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/27 15:08:07 by ikhadem           #+#    #+#             */
-/*   Updated: 2019/11/04 13:20:30 by ikhadem          ###   ########.fr       */
+/*   Updated: 2019/11/05 19:43:14 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,21 +26,16 @@
 # include "../sources/libft/libft.h"
 
 /*
-**  ----- structs -----
-*/
-
-typedef struct      s_fstr
-{
-    char            *str;
-    va_list         args;
-}                   t_fstr;
-
-/*
 **  ----- protos -----
 */
+
 int     ft_printf(const char *str, ...);
 void	ft_hint(int content);
 void	ft_hhex(int content, int type);
 void    ft_parse_str(va_list args, const char *str);
+void    ft_hand_arg(va_list args, char *str);
+void    check_flag(char *c, char f);
+int     check_width(char **str);
+int     check_precision(char **str);
 
 #endif
