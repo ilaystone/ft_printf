@@ -6,13 +6,13 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 19:42:09 by ikhadem           #+#    #+#             */
-/*   Updated: 2019/11/05 19:42:50 by ikhadem          ###   ########.fr       */
+/*   Updated: 2019/11/06 08:43:10 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-void check_flag(char *c, char f)
+void	check_flag(char *c, char f)
 {
     if (f == '-')
         *c = '-';
@@ -20,30 +20,16 @@ void check_flag(char *c, char f)
         *c = '0';
 }
 
-int check_width(char **str)
+/*
+**	this function get the width or precision if any is found
+*/
+
+void	check_size(char **str, int *i)
 {
-    int w;
-
-    w = 0;
-    if (ft_isdigit(**str))
-        w = ft_atoi(*str);
-    while (ft_isdigit(**str++))
-        ;
-    return (w);
-}
-
-int check_precision(char **str)
-{
-    int p;
-
-    p = 0;
-    if (**str == '.')
-    {
-        str++;
-        if (ft_isdigit(**str))
-            p = ft_atoi(*str);
-        while (ft_isdigit(**str++))
-            ;
-    }
-    return (p);
+	if (ft_isdigit(**str))
+	{
+		*i = ft_atoi(*str);
+		while (ft_isdigit(**str++))
+			;
+	}
 }

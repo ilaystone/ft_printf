@@ -6,8 +6,13 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 16:45:33 by ikhadem           #+#    #+#             */
-/*   Updated: 2019/11/05 17:15:41 by ikhadem          ###   ########.fr       */
+/*   Updated: 2019/11/06 09:36:28 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
+
+void	display(va_list args, t_larg lst)
+{
+	
+}

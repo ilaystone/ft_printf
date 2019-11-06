@@ -4,30 +4,33 @@ s : done
 p : done
 d : done
 i : done
-u :
+u : done
 x : done
 X : done
 
 /* min field Width */
-(flat number) :
-* :
+(flat number) : done
+* : done
 
 /* flags */
-- :
-0 :
+- : done
+0 : done
 
 /* precision */
-. :
+. : done
 
 /* bonus */
-n :
-f :
-g :
-e :
+
+n : 
+f : 
+g : 
+e : 
+
 l :
 ll :
 h :
 hh :
+
 # :
 (space) :
 + :
