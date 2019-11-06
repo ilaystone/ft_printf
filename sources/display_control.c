@@ -6,16 +6,11 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 16:45:33 by ikhadem           #+#    #+#             */
-/*   Updated: 2019/11/06 17:12:19 by ikhadem          ###   ########.fr       */
+/*   Updated: 2019/11/06 17:19:24 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
-
-void	ft_display_string(char *str, t_larg *lst)
-{
-	ft_putstr(str);
-}
 
 void	display(va_list args, t_larg *lst)
 {
