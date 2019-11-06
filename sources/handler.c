@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 19:11:49 by ikhadem           #+#    #+#             */
-/*   Updated: 2019/11/06 09:35:57 by ikhadem          ###   ########.fr       */
+/*   Updated: 2019/11/06 17:02:53 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,18 @@ void    ft_hand_arg(va_list args, char *str)
 			if (*str == '*')
 				lst->precision = va_arg(args, int);
 			else
-				check_size(&str, &lst->precision);
+				str = check_size(str, &lst->precision);
 		}
 		else if (*str == '*')
+		{
 			lst->width = va_arg(args, int);
+			str++;
+		}
+		else if (ft_isdigit(*str))
+			str = check_size(str, &lst->width);
 		else
-			check_size(&str, &lst->width);
-        str++;
+			str++;
     }
-	display(va_list args, t_larg lst);
+	lst->type = str[ft_strlen(str) - 1];
+	display(args, lst);
 }

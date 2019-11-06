@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/03 15:43:11 by ikhadem           #+#    #+#             */
-/*   Updated: 2019/11/06 09:34:16 by ikhadem          ###   ########.fr       */
+/*   Updated: 2019/11/06 17:13:10 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ static int     ft_istype(char c)
 
 int     main(void)
 {
-	ft_printf("%*.*d  %*.5d  %7.*d", 1, 2, 3, 4, 6, 8, 9);
+	ft_printf("%s\n", "ilyass");
+	printf("%-10.5s", "ilyass");
 	return (0);
 }

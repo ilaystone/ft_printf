@@ -4,11 +4,11 @@ s : done
 p : done
 d : done
 i : done
-u : done
+u : 
 x : done
 X : done
 
-/* min field Width */
+/* Width */
 (flat number) : done
 * : done
 

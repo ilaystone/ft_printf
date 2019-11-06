@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 19:42:09 by ikhadem           #+#    #+#             */
-/*   Updated: 2019/11/06 08:43:10 by ikhadem          ###   ########.fr       */
+/*   Updated: 2019/11/06 16:13:45 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,13 @@ void	check_flag(char *c, char f)
 **	this function get the width or precision if any is found
 */
 
-void	check_size(char **str, int *i)
+char	*check_size(char *str, int *i)
 {
-	if (ft_isdigit(**str))
+	if (ft_isdigit(*str))
 	{
-		*i = ft_atoi(*str);
-		while (ft_isdigit(**str++))
-			;
+		*i = ft_atoi(str);
+		while (ft_isdigit(*str))
+			str++;
 	}
+	return (str);
 }

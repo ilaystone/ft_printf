@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   format_args.c                                      :+:      :+:    :+:   */
+/*   display_control.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/06 09:25:27 by ikhadem           #+#    #+#             */
-/*   Updated: 2019/11/06 14:30:02 by ikhadem          ###   ########.fr       */
+/*   Created: 2019/11/05 16:45:33 by ikhadem           #+#    #+#             */
+/*   Updated: 2019/11/06 17:12:19 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-void	reset_larg(t_larg *lst)
+void	ft_display_string(char *str, t_larg *lst)
 {
-	lst->flag = '\0';
-	lst->type = '\0';
-	lst->width = 0;
-	lst->precision = 0;
+	ft_putstr(str);
 }
 
-t_larg	*ft_newlarg()
+void	display(va_list args, t_larg *lst)
 {
-	t_larg		*new;
-	if (!(new = (t_larg *)malloc(sizeof(t_larg))))
-		return (NULL);
-	reset_larg(new);
-	return (new);
+	if (lst->type == 'd' || lst->type == 'i')
+		ft_display_number(va_arg(args, int), lst);
+	if (lst->type == 'x')
+		ft_display_hex(va_arg(args, int), lst, L_HEXA);
+	if (lst->type == 'X')
+		ft_display_hex(va_arg(args, int), lst, U_HEXA);
+	if (lst->type == 's')
+		ft_display_string(va_arg(args, char*), lst);
 }
